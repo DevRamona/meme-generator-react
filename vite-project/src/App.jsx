@@ -5,16 +5,23 @@ import './App.css'
 import Navbar from './Components/Navbar'
 import Form from "./Components/Forms"
 import Exercise from "./Components/Exercise"
+import Castle from './Components/Castle'
+import Window from './Components/Window'
+import Door from './Components/Door'
 
 function App() {
   return (
     <div className='w-4/6'>
       <Navbar/>
       <Form/>
-      {/* <Exercise
+      <Exercise
       bookName = "Harry potter"
       bookAuthor = "Junior Mk"
-      /> */}
+      /> 
+      <Castle> 
+        <Window/>
+        <Door/>
+      </Castle>
     </div>
   )
 }
