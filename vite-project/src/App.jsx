@@ -14,14 +14,7 @@ function App() {
     <div className='w-4/6'>
       <Navbar/>
       <Form/>
-      <Exercise
-      bookName = "Harry potter"
-      bookAuthor = "Junior Mk"
-      /> 
-      <Castle> 
-        <Window/>
-        <Door/>
-      </Castle>
+      
     </div>
   )
 }
