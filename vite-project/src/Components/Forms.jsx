@@ -1,5 +1,5 @@
 import React from "react";
-import memesData from "./MemesData";
+// import memesData from "./MemesData";
 
 export default function Form() {
   // const [memeImage, setImage] = React.useState("https://i.imgflip.com/30b1gx.jpg");
@@ -15,13 +15,13 @@ export default function Form() {
   function handleMeme(e) {
     e.preventDefault();
 
-    const memesArray = memesData.data.memes;
+    // const memesArray = memesData.data.memes;
 
     // console.log(memesArray);
-    const randomMemes = Math.floor(Math.random() * memesArray.length);
+    const randomMemes = Math.floor(Math.random() * meme.length);
     // console.log(randomMemes)
 
-    const url = memesArray[randomMemes].url;
+    const url = meme[randomMemes].url;
     // console.log(url);
     setMeme(prevMeme => ({
       ...prevMeme,
@@ -39,6 +39,13 @@ export default function Form() {
     })
 
   }
+  React.useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+    .then(res => res.json())
+    .then(data => setMeme(data.data.memes))
+    
+  
+  },[])
   return (
     <div>
       <form className="grid grid-cols-2 grid-rows-2 gap-2 mt-6" onSubmit={handleMeme}>
